@@ -7,3 +7,4 @@ services:
       - "6379:6379"
     volumes:
       - $PWD/redis/data:/data
+    command: /bin/sh -c 'redis-server --appendonly yes --requirepass $${REDIS_PASSWORD}'
