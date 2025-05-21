@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    volumes:
+      - $PWD/rabbitmq/data:/var/lib/rabbitmq
+      - $PWD/rabbitmq/log:/var/log/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
