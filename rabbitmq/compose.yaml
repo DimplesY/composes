@@ -1,6 +1,6 @@
 services:
   rabbitmq:
-    image: rabbitmq
+    image: rabbitmq:4.1.0-management-alpine
     container_name: rabbitmq
     restart: unless-stopped
     env_file:
