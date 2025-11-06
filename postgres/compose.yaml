@@ -9,6 +9,6 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - TZ=Asia/Shanghai
     volumes:
-      - $PWD/db/:/var/lib/postgresql/data
+      - $PWD/db/:/var/lib/postgresql
     ports:
       - "5432:5432"
